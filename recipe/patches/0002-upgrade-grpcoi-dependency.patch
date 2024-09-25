@@ -1,0 +1,7 @@
+--- v4-client-py-v2/pyproject.toml.orig   2024-07-19 14:52:16.008520276 -0500
++++ v4-client-py-v2/pyproject.toml        2024-07-19 14:54:03.834496484 -0500
+@@ -17,3 +17,3 @@
+ pycryptodome = "^3.20.0"
+-grpcio = "1.65.4"
++grpcio = "1.65.4"
+
