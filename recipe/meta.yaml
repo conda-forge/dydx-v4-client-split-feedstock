@@ -17,7 +17,7 @@ source:
     - patches/0002-upgrade-grpcio-dependency.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 outputs:
@@ -30,7 +30,7 @@ outputs:
         - dydxprotocol-v4-proto-py ==5.2.1
         - pip
         - poetry
-        - python >=3.9
+        - python {{ python_min }}
         - typing-extensions ==4.12
       run:
         - dydxprotocol-v4-proto-py ==5.2.1
@@ -40,7 +40,7 @@ outputs:
         - grpcio ==1.65.5
         - httpx ==0.27
         - pycryptodome ==3.20
-        - python >=3.9
+        - python >={{ python_min }}
         - websocket-client ==1.7
     test:
       source_files:
@@ -54,6 +54,7 @@ outputs:
         - pytest
         - pytest-asyncio
         - pytest-dotenv
+        - python {{ python_min }}
       commands:
         - pip check
         - cd v4-client-py-v2 && poetry run pytest || true
@@ -70,6 +71,7 @@ outputs:
         - dydx_v4_client
       requires:
         - pip
+        - python {{ python_min }}
       commands:
         - pip check
 
